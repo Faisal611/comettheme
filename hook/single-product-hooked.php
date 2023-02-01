@@ -31,7 +31,7 @@ function woo_single_product_meta (){
                         }else{ echo 'No Sizes';}
                     ?>
                 </li>
-            <!-- Product Colors-->
+                <!-- Product Colors-->
                 <li><span>Colors:</span>
                      <?php
                         $colors = get_the_terms(get_the_ID(),'product-color');
@@ -74,8 +74,6 @@ function woo_single_product_meta (){
 	</div>
 	<?php
 }
-
-
 
 // Tabs
 add_filter('woocommerce_product_tabs','new_tabs_function');
@@ -134,7 +132,6 @@ function remove_additional_information_tab( $tabs ) {
 
 
 // Carts pages Hooked
-
 add_action('woocommerce_before_cart' , 'woo_before_cart_function');
 function woo_before_cart_function () {
     ?>

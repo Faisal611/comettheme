@@ -36,31 +36,31 @@ function woocommerce_page_title_function() {
             <?php
         }
 
-    add_action( 'woocommerce_before_shop_loop', 'catalog_ordering_before', 29 );
-        function catalog_ordering_before() {
-            ?>
-            <div class="col-md-4 col-sm-4">
-                <div class="row">
-                    <div class="form-select">
-            <?php
-        }
-    add_action('woocommerce_before_shop_loop','catalog_ordering_after',31);
-    function catalog_ordering_after () {
-        ?>
-            </div>
-            </div>
-            </div>
-            </div>
-        <?php
-    }
+            add_action( 'woocommerce_before_shop_loop', 'catalog_ordering_before', 29 );
+                function catalog_ordering_before() {
+                    ?>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="row">
+                            <div class="form-select">
+                    <?php
+                }
+                add_action('woocommerce_before_shop_loop','catalog_ordering_after',31);
+                function catalog_ordering_after () {
+                    ?>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                    <?php
+                }
 
-    add_action( 'woocommerce_after_shop_loop', 'all_shop_page_section_function_ends',10 );
-    function all_shop_page_section_function_ends() {
-        ?>
-            </div>
-        </section>
-        <?php
-    }
+                add_action( 'woocommerce_after_shop_loop', 'all_shop_page_section_function_ends',10 );
+                function all_shop_page_section_function_ends() {
+                    ?>
+                        </div>
+                    </section>
+                    <?php
+                }
 
     // pagination hidden
     add_action( 'woocommerce_before_shop_loop', 'product_pagination_before', 40 );
@@ -76,9 +76,6 @@ function woocommerce_page_title_function() {
             </div>
         <?php
     }
-
-
-
 
 
     // woocommerce Product Hooked / Content Product
@@ -99,29 +96,28 @@ function woocommerce_page_title_function() {
     add_action('woocommerce_before_shop_loop_item','loop_before_link');
     function loop_before_link () {
         ?>
-        <div class="product-thumb"><a href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
+        <div class="product-thumb">
+            <a href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
             <div class="product-overlay">
-    <?php
-	    global $product;
-
-	    echo apply_filters(
-		    'woocommerce_loop_add_to_cart_link',
-		    // WPCS: XSS ok.
-		    sprintf(
-			    '<a href="%s" data-quantity="%s" class="%s" %s>%s <i class="ti-bag"></i></a>',
-			    esc_url( $product->add_to_cart_url() ),
-			    esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-			    esc_attr( 'btn btn-color-out btn-sm' ),
-			    isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-			    esc_html( $product->add_to_cart_text() )
-		    ),
-		    $product,
-		    $args
-	    );
-    ?>
+                <?php
+                    global $product;
+                    echo apply_filters(
+                        'woocommerce_loop_add_to_cart_link',
+                        // WPCS: XSS ok.
+                        sprintf(
+                            '<a href="%s" data-quantity="%s" class="%s" %s>%s <i class="ti-bag"></i></a>',
+                            esc_url( $product->add_to_cart_url() ),
+                            esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+                            esc_attr( 'btn btn-color-out btn-sm' ),
+                            isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+                            esc_html( $product->add_to_cart_text() )
+                        ),
+                        $product,
+                        $args
+                    );
+                ?>
             </div>
         </div>
-
     <?php
     }
 
