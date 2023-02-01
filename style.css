@@ -1,0 +1,24 @@
+/*
+    Theme Name: Comet Theme
+    Theme URI: https://wordpress.org/themes/comettheme/
+    Text Domain: comettheme
+    Author: Web Max Co
+    Author URI: https://wordpress.org/
+*/
+.all_product_pagination {
+    overflow: hidden;
+}
+.pagination li {
+    display: inline-block;
+    list-style: none;
+}
+.price_class {
+    display: flex;
+}
+ol, ul {
+     list-style: none;
+ }
+.cart > tbody > tr > td img {
+    max-height: 150px;
+    max-width: 150px;
+}
