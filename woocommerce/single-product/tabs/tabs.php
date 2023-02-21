@@ -29,7 +29,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 $countries = array_values($product_tabs);
 if ( ! empty( $product_tabs ) ) : ?>
-
 	<div class="col-md-12 woocommerce-tabs wc-tabs-wrapper">
         <ul role="tablist" class="nav nav-tabs">
 			<?php foreach ( $countries as $key => $product_tab ) : ?>
